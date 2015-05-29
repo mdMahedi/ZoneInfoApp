@@ -1,0 +1,23 @@
+create database FairManagementDB
+use FairManagementDB
+
+create table tbl_Visitor
+(
+id int identity primary key,
+name nvarchar (150),
+email nvarchar (150),
+mobile nvarchar (15)
+)
+
+create table tbl_Zone
+(
+id int identity primary key,
+name nvarchar (150)
+)
+
+create table tbl_Reference
+(
+id int identity primary key,
+zoneId int foreign key references tbl_Zone(id),
+visitorId int foreign key references tbl_Visitor(id)
+)
